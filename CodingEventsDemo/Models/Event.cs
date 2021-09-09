@@ -22,6 +22,8 @@ namespace CodingEventsDemo.Models
         {
             Name = name;
             Description = description;
+            Id = nextId;
+            nextId++;
         }
 
         public override string ToString()
