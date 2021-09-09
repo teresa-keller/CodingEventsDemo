@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CodingEventsDemo.Data;
 using CodingEventsDemo.Models;
 using Microsoft.AspNetCore.Mvc;
+using CodingEventsDemo.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,13 +24,19 @@ namespace coding_events_practice.Controllers
 
         public IActionResult Add()
         {
-            return View();
+            AddEventViewModel addEventViewModel = new AddEventViewModel();
+            
+            return View(addEventViewModel);
         }
 
         [HttpPost]
-        [Route("Events/Add")]
-        public IActionResult NewEvent(Event newEvent)
+        public IActionResult Add(AddEventViewModel addEventViewModel)
         {
+            Event newEvent = new Event
+            {
+                Name = addEventViewModel.Name,
+                Description = addEventViewModel.Description
+            };
             EventData.Add(newEvent);
       
             return Redirect("/Events");
