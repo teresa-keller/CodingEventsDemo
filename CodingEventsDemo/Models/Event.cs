@@ -21,6 +21,12 @@ namespace CodingEventsDemo.Models
             nextId++;
         }
 
+        public Event()
+        {
+            Id = nextId;
+            nextId++;
+        }
+
         public override string ToString()
         {
             return Name;
