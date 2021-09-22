@@ -28,5 +28,10 @@
         <input asp-for="NumberOfAttendees" />
         <span asp-validation-for="NumberOfAttendees"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="IsAttending">Attending</label>
+        <input type="checkbox" asp-for="IsAttending" />
+        <span asp-validation-for="IsAttending"></span>
+    </div>
     <input type="submit" value="Add Event" />
 </form>

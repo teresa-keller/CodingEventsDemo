@@ -20,5 +20,9 @@ namespace CodingEventsDemo.ViewModels
         public string Location { get; set; }
         [Range(0, 100000)]
         public int NumberOfAttendees { get; set; }
+        
+        public bool IsAttending { get; set; }
+        [Compare(nameof(IsAttending))]
+        public bool IsTrue { get { return true; } }
     }
 }

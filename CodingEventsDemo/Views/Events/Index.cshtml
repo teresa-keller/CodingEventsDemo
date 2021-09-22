@@ -37,17 +37,29 @@ else
             <th>
                 Number of Attendees
             </th>
+            <th>
+                Attending
+            </th>
         </tr>
         @foreach (var evt in Model)
         {
-            <tr>
-                <td>@evt.Id</td>
-                <td>@evt.Name</td>
-                <td>@evt.Description</td>
-                <td>@evt.ContactEmail</td>
-                <td>@evt.Location</td>
-                <td>@evt.NumberOfAttendees</td>
-            </tr>
+    <tr>
+        <td>@evt.Id</td>
+        <td>@evt.Name</td>
+        <td>@evt.Description</td>
+        <td>@evt.ContactEmail</td>
+        <td>@evt.Location</td>
+        <td>@evt.NumberOfAttendees</td>
+        @if (@evt.IsTrue == true)
+        {
+            <td>Attending</td>
+        }
+        else
+        {
+            <td>Not attending</td>
+        }
+
+    </tr>
         }
     </table>
 }

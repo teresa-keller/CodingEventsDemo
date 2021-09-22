@@ -15,6 +15,9 @@ namespace CodingEventsDemo.Models
 
         public int NumberOfAttendees { get; set; }
 
+        public bool IsAttending { get; set; }
+        public bool IsTrue { get { return true; } }
+
         public int Id { get; }
         static private int nextId = 1;
 
